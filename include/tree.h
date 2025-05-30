@@ -20,10 +20,11 @@ class PMTree {
 
  public:
     explicit PMTree(const std::vector<char>& input);
-    ~PMTree() = default;    void traverse(TreeNode* node, std::vector<char>& current,
+    ~PMTree() = default;
+    void traverse(TreeNode* node, std::vector<char>& current,
                   std::vector<std::vector<char>>& result);
-    const std::vector<std::unique_ptr<TreeNode>>& getRoots() const { 
-        return roots; 
+    const std::vector<std::unique_ptr<TreeNode>>& getRoots() const {
+        return roots;
     }
     const std::vector<char>& getAlphabet() const { return alphabet; }
 };
