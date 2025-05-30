@@ -1,17 +1,19 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
 #include <iostream>
 #include <fstream>
 #include <chrono>
 #include <iomanip>
 #include <ctime>
+#include <vector>
+#include "tree.h"
 
 template<typename T>
 double measureTime(T&& func) {
     auto start = std::chrono::high_resolution_clock::now();
     func();
     auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(
+        end - start);
     return duration.count() / 1000.0;
 }
 void printPerm(const std::vector<char>& perm) {
@@ -35,7 +37,8 @@ int main() {
     printPerm(perm1);
     std::cout << ", getPerm2=";
     printPerm(perm2);
-    std::cout << std::endl;    std::cout << "n\tgetAllPerms(ms)\tgetPerm1(ms)\tgetPerm2(ms)" << std::endl;
+    std::cout << std::endl;
+    std::cout << "n\tgetAllPerms(ms)\tgetPerm1(ms)\tgetPerm2(ms)" << std::endl;
     std::cout << "\t\t\t" << std::endl;
     for (int n = 1; n <= 11; ++n) {
         std::vector<char> alphabet;

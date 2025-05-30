@@ -4,6 +4,9 @@
 #include  <locale>
 #include  <cstdlib>
 #include  <algorithm>
+#include  <vector>
+#include  <memory>
+#include  <utility>
 #include  <numeric>
 #include  "tree.h"
 
